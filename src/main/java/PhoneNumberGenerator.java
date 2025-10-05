@@ -2,18 +2,21 @@ import java.util.Random;
 
 public class PhoneNumberGenerator {
     public static void main(String[] args) {
-        // TODO: Create Random object for phone number generation
+        Random rand = new Random();
         
-        // TODO: Generate first three digits (XXX)
-        // Constraint: Cannot contain 8 or 9 (digits 0-7 only)
+        // area code
+        int AH = rand.nextInt(8);
+        int AT = rand.nextInt(8);
+        int AO = rand.nextInt(8);
+        int ac = AH * 100 + AT * 10 + AO;
         
-        // TODO: Generate second three digits (XXX) 
-        // Constraint: Must be <= 742 (000-742)
+        // exchange
+        int e = rand.nextInt(743);
         
-        // TODO: Generate third three digits (XXX)
-        // No constraints (000-999)
+        // subscriber
+        int s = rand.nextInt(1000);
         
-        // TODO: Format and display phone number as XXX-XXX-XXX
-        // Include the dashes in the output
+        // output phone number
+        System.out.print(ac + "-" + e + "-" + s);
     }
 }
